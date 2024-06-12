@@ -4,7 +4,7 @@ const ProductController = {
     async createProduct(req, res) {
         try {
             const newProductData = req.body;
-            const newProduct = new Customer(newProductData);
+            const newProduct = new Product(newProductData);
             await newProduct.save();
             res.status(201).json(newProduct);
         } catch (error) {
@@ -54,11 +54,12 @@ const ProductController = {
 
     async deleteProduct(req, res) {
         try {
-            const deletedPr = await Product.findOneAndDelete({ id: req.params.id });
+            const productId = req.params.id;
+            const deletedPr = await Product.findByIdAndDelete(productId);
             if (!deletedPr) {
                 return res.status(404).json({ message: 'Product non trouvé.' });
             }
-            res.json({ message: 'Produit supprimé avec succès.' });
+            res.status(200).json({ message: 'Produit supprimé avec succès.' });
         } catch (error) {
             res.status(500).json({ message: 'Erreur lors de la suppression du produit.' });
         }
