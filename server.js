@@ -5,7 +5,8 @@ const config = require('./config/config.js')
 const ProductController = require('./controllers/productController.js')
 
 const app = express();
-// app.use('/api', productRoutes);
+app.use(express.json());
+app.use('/api', productRoutes);
 
 mongoose.connect(config.mongoURI, { useUnifiedTopology: true })
 .then(() => console.log('MongoDB connected'))
@@ -15,12 +16,6 @@ app.listen(3001, () => {
   console.log('Server is running on port 3000');
 });
 
-
-app.post('/product', ProductController.createProduct);
-app.get('/products/:id', ProductController.getProductById);
-app.get('/products', ProductController.getAllProduct);
-app.put('/products/:id', ProductController.updateProduct);
-app.delete('/products/:id', ProductController.deleteProduct);
 
 
 module.exports = app;
