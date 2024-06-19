@@ -21,9 +21,12 @@
     "jest-junit": "^16.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.1",
+    "prom-client": "^15.1.2",
     "sinon": "^18.0.0",
     "supertest": "^7.0.0",
+    "swagger-ui-express": "^5.0.1",
     "winston": "^3.13.0",
-    "winston-mongodb": "^5.1.1"
+    "winston-mongodb": "^5.1.1",
+    "yamljs": "^0.3.0"
   }
 }
