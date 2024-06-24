@@ -1,0 +1,14 @@
+amqplib
+bcryptjs
+dotenv
+jest
+jest-junit
+jsonwebtoken
+mongoose
+prom-client
+sinon
+supertest
+swagger-ui-express
+winston
+winston-mongodb
+yamljs

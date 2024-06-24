@@ -1,7 +1,7 @@
 const Product = require( '../models/Product.js');
 const amqp = require('amqplib/callback_api');
 const config = require("../config/config.js")
-const logger = require("../config/logger.js")
+const logger = require("../utils/logger.js")
 require("dotenv").config()
 
 function publishToQueue(queue, message) {
